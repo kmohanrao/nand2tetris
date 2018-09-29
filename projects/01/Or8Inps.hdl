@@ -1,0 +1,12 @@
+CHIP Or8Inps {
+	IN in1,in2,in3,in4,in5,in6,in7,in8;
+	OUT out;
+PARTS:
+	Or(a=in1,b=in2,out=l1cmp1);
+	Or(a=in3,b=in4,out=l1cmp2);
+	Or(a=in5,b=in6,out=l1cmp3);
+	Or(a=in7,b=in8,out=l1cmp4);
+	Or(a=l1cmp1,b=l1cmp2,out=l2cmp1);
+	Or(a=l1cmp3,b=l1cmp4,out=l2cmp2);
+	Or(a=l2cmp2,b=l2cmp1,out=out);
+}

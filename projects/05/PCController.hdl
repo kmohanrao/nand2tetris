@@ -1,0 +1,10 @@
+CHIP PCController {
+IN zr,ng,ins[16];
+OUT out;
+PARTS:
+Or(b=zr,a=ng,out=jle);
+Not(in=jle,out=jgt);
+Or(a=jgt,b=zr,out=jge);
+Not(in=zr,out=jne);
+Mux8Way(a=false,b=jgt,c=zr,d=jge,e=ng,f=jne,g=jle,h=true,sel=ins[12..15],out=pcload);
+}

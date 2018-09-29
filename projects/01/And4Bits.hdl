@@ -1,0 +1,8 @@
+CHIP And4Bits {
+	IN a,b,c,d;
+	OUT out;
+	PARTS:
+	And(a=a,b=b,out=lvl1o1);
+	And(a=c,b=d,out=lvl1o2);
+	And(a=lvl1o1,b=lvl1o2,out=out);
+}

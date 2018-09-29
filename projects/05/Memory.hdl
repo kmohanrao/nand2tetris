@@ -27,5 +27,8 @@ CHIP Memory {
     OUT out[16];
 
     PARTS:
+		Add16(a=address,b=[true,true,false,false,false,false,false,false,false,false,false,false,false,false,false],out=tmp)
+		
+		DMux4Way(a=
     // Put your code here:
 }

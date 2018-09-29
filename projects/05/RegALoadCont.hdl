@@ -1,0 +1,8 @@
+CHIP RegALoadCont {
+IN instruction[16];
+OUT out;
+PARTS:
+And(a=instruction[0],b=instruction[10],out=tmp1);
+Not(in=instruction[0],out=tmp2);
+Or(a=tmp2,b=tmp2,out=out);
+}
